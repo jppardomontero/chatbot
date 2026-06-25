@@ -1,1434 +1,253 @@
 <!DOCTYPE html>
-<html lang="es"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
-        window.__firebase_config = firebaseConfig;
-        window.__initial_auth_token = initialAuthToken;
-        window.__app_id = appId;
-            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6ImQzMmE5NGU0NjFmNjZhODQ0YWFhYTY1NjdiZWM4OWY2NWIzMzg0ODQiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIwNjIyMTMwODU4MjAyNTI2MDY0NSIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjXzc1NTNlYWE2MGFkMjQ0MjBfaW5kZXguaHRtbC03ODcifSwiZXhwIjoxNzczMzQ1NzcxLCJpYXQiOjE3NzMzNDIxNzEsImFsZyI6IlJTMjU2In0.VYhDAbZWt_gFSH1AxQX35TKTZnsxE0x34zIiVq1Kx3_Ga45zbG0bh8lrt6fNu9-9rY9RZI0u98LaDtKL82f3IoqxDQDVzRrhi3h0qG31DA-mC9VDtak6hZDJhkLHMkALPUhjKoseebJhWFZZYg7gDmKo4HKbjOSm86WHRWyk045jkEn7UgRwenzSXpe-k_ffG9czIT7aHN7KnrgDjQn11lQhLMEW_TsFmQ5OF0bkTcJE8y9v9lqjeljIK6SSzq-SkJTDvZskWmckdsFFhtGhnW7LAaBwjLBfPntkvMbQne5kM55CT69F5zUF1mXxql6LhLc2wYfovwww1X6b0PxzEQ","c_7553eaa60ad24420_index.html-787")</script><script>(function(){'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
-function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
-p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
-
- MIT License
-
- Copyright (c) 2017-2023 W.Y.
-
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.
-
-*/
-function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
-function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
-function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
-function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
-var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
-function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
-function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
-function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
-function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
-return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
-function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
-function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
-c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
-function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
-function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
-function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
-function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
-function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
-function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
-d.lastIndex;b.push(e[0])}return b}
-function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
-{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
-function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
-function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
-function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
-16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
-function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
-function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
-window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
-})();</script><script>(function() {
-  // Ensure this script is executed only once
-  if (window.firebaseAuthBridgeScriptLoaded) {
-    return;
-  }
-  window.firebaseAuthBridgeScriptLoaded = true;
-
-  let nextTokenPromiseId = 0;
-
-  // Stores { resolve, reject } for ongoing token requests
-  const pendingTokenPromises = {};
-
-  // Listen for messages from the Host Application
-  window.addEventListener('message', function(event) {
-
-    const messageData = event.data;
-
-  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
-      const { success, token, error, promiseId } = messageData ?? {};
-      if (pendingTokenPromises[promiseId]) {
-        if (success) {
-          pendingTokenPromises[promiseId].resolve(token);
-        } else {
-          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
-        }
-        delete pendingTokenPromises[promiseId];
-      }
-    }
-  });
-
-  // Expose a function for the Generated App to request a new Firebase token
-  window.requestNewFirebaseToken = function() {
-    const currentPromiseId = nextTokenPromiseId++;
-    const promise = new Promise((resolve, reject) => {
-      pendingTokenPromises[currentPromiseId] = { resolve, reject };
-    });
-    if (window.parent && window.parent !== window) {
-      window.parent.postMessage({
-        type: 'REQUEST_NEW_FIREBASE_TOKEN',
-        promiseId: currentPromiseId
-      }, '*');
-    } else {
-      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
-      delete pendingTokenPromises[currentPromiseId];
-    }
-    return promise;
-  };
-})();</script><script>
-let realOriginalGetUserMedia = null;
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
-}
-
-(function() {
-  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
-    try {
-      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
-        get: function() {
-          return undefined; // Or throw an error
-        },
-        configurable: false
-      });
-    } catch (error) {
-      console.error("Error defining prototype getter:", error);
-    }
-  }
-})();
-
-(function() {
-  const pendingMediaResolvers = {};
-  let nextMediaPromiseId = 0;
-
-  function requestMediaPermissions(constraints) {
-    const mediaPromiseId = nextMediaPromiseId++;
-    const promise = new Promise((resolve, reject) => {
-      pendingMediaResolvers[mediaPromiseId] = (granted) => {
-        delete pendingMediaResolvers[mediaPromiseId];
-        resolve(granted);
-      };
-    });
-
-    window.parent.postMessage({
-      type: 'requestMediaPermission',
-      constraints: constraints,
-      promiseId: mediaPromiseId,
-    }, '*');
-
-    return promise;
-  }
-
-  let originalGetUserMedia = realOriginalGetUserMedia;
-
-  function interceptGetUserMedia() {
-    if (navigator.mediaDevices) {
-      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
-        value: function(constraints) {
-          return requestMediaPermissions(constraints).then((granted) => {
-            if (granted) {
-              if (originalGetUserMedia) {
-                return originalGetUserMedia(constraints);
-              } else {
-                throw new Error("Original getUserMedia not available.");
-              }
-            } else {
-              throw new DOMException('Permission denied', 'NotAllowedError');
-            }
-          });
-        },
-        writable: false,
-        configurable: false
-      });
-    }
-  }
-
-  interceptGetUserMedia();
-
-  const observer = new MutationObserver(function(mutationsList, observer) {
-    for (const mutation of mutationsList) {
-      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
-        interceptGetUserMedia();
-      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
-        interceptGetUserMedia();
-      } else if (mutation.type === 'childList' && mutation.addedNodes) {
-        mutation.addedNodes.forEach(node => {
-          if (node === navigator.mediaDevices) {
-            interceptGetUserMedia();
-          }
-        });
-      }
-    }
-  });
-
-  function interceptSpeechRecognition() {
-    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
-      return;
-    }
-
-    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
-    const SpeechRecognitionWrapper = function(...args) {
-      const recognizer = new OriginalSpeechRecognition(...args);
-      const originalStart = recognizer.start.bind(recognizer);
-
-      recognizer.start = function() {
-        requestMediaPermissions({ audio: true }).then(granted => {
-          if (granted) {
-            originalStart();
-          } else {
-            const errorEvent = new SpeechRecognitionErrorEvent('error');
-            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
-            recognizer.dispatchEvent(errorEvent);
-          }
-        });
-      };
-
-      return recognizer;
-    };
-
-    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
-    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
-
-    if (window.SpeechRecognition) {
-      window.SpeechRecognition = SpeechRecognitionWrapper;
-    }
-    if (window.webkitSpeechRecognition) {
-      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
-    }
-  }
-
-  interceptSpeechRecognition();
-
-  window.addEventListener('message', function(event) {
-    if (event.data) {
-      if (event.data.type === 'resolveMediaPermission') {
-        const { promiseId, granted } = event.data;
-        if (pendingMediaResolvers[promiseId]) {
-          pendingMediaResolvers[promiseId](granted);
-        }
-      }
-    }
-  });
-
-})();</script><script>((function(modelInformation) {
-  const originalFetch = window.fetch;
-  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
-  let googleLlmBaseApiUrls = [
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
-  ];
-  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
-    );
-  });
-  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
-    );
-  });
-
-  const pendingFetchResolvers = {};
-  let nextPromiseId = 0;
-
-  function handleStringInput(input, optionsArgument) {
-    const actualUrl = input;
-    const fetchCallArgs = [actualUrl, optionsArgument];
-    const effectiveOptions = optionsArgument || {};
-    const bodyForApiKeyCheck = effectiveOptions.body;
-    const bodyForPostMessage = effectiveOptions.body;
-    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
-  }
-
-  function handleRequestInput(input, optionsArgument) {
-    const actualUrl = input.url;
-    const fetchCallArgs = [input, optionsArgument];
-    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
-    let bodyForApiKeyCheck;
-    let bodyForPostMessage;
-
-    if (optionsArgument) {
-      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
-      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
-      if ('body' in optionsArgument) {
-        bodyForApiKeyCheck = optionsArgument.body;
-        bodyForPostMessage = optionsArgument.body;
-      } else {
-        bodyForApiKeyCheck = undefined;
-        bodyForPostMessage = input.body;
-      }
-    } else {
-      bodyForApiKeyCheck = undefined;
-      bodyForPostMessage = input.body;
-    }
-    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
-  }
-
-  window.fetch = function(input, optionsArgument) {
-    let actualUrl;
-    let fetchCallArgs;
-    let effectiveOptions = {};
-    let bodyForApiKeyCheck;
-    let bodyForPostMessage;
-
-    if (typeof input === 'string') {
-      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
-    } else if (input instanceof Request) {
-      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
-    } else {
-      return originalFetch.apply(window, [input, optionsArgument]);
-    }
-
-    effectiveOptions.method = effectiveOptions.method || 'GET';
-    if (!effectiveOptions.headers) {
-      effectiveOptions.headers = new Headers();
-    }
-
-
-    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
-      let apiKeyIsNull = true;
-
-      const regex = new RegExp("models/([^:]+)");
-      const modelNameMatch = actualUrl.match(regex);
-      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
-
-
-      try {
-        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
-        const apiKeyParam = urlObject.searchParams.get('key');
-        if (apiKeyParam) {
-          apiKeyIsNull = false;
-        }
-      } catch (e) {
-        // Continue checks even if URL parsing fails
-      }
-
-      if (apiKeyIsNull && effectiveOptions.headers) {
-        const h = new Headers(effectiveOptions.headers);
-        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
-        if (apiKeyHeaderValue) {
-          apiKeyIsNull = false;
-          return originalFetch.apply(window, fetchCallArgs);
-        }
-      }
-
-      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
-        try {
-          const bodyData = JSON.parse(bodyForApiKeyCheck);
-          if (bodyData && bodyData.apiKey) {
-            apiKeyIsNull = false;
-            return originalFetch.apply(window, fetchCallArgs);
-          }
-        } catch (e) {
-          // Ignore JSON parsing errors
-        }
-      }
-
-      if(apiKeyIsNull) {
-        const promiseId = nextPromiseId++;
-        const promise = new Promise((resolve) => {
-          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
-            delete pendingFetchResolvers[promiseId];
-            resolve(resolvedResponse);
-          };
-        });
-
-        let serializedBodyForPostMessage;
-        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
-            serializedBodyForPostMessage = bodyForPostMessage;
-        } else if (bodyForPostMessage instanceof ReadableStream) {
-            serializedBodyForPostMessage = null;
-        } else {
-            try {
-                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
-            } catch (e) {
-                serializedBodyForPostMessage = null;
-            }
-        }
-
-        const messageOptions = {
-            method: effectiveOptions.method,
-            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
-            body: serializedBodyForPostMessage
-        };
-
-        window.parent.postMessage({
-          type: 'requestFetch',
-          url: actualUrl,
-          modelName: modelName,
-          options: messageOptions,
-          promiseId: promiseId,
-        }, '*');
-
-        return promise;
-      }
-      return originalFetch.apply(window, fetchCallArgs);
-    }
-    return originalFetch.apply(window, fetchCallArgs);
-  };
-
-  window.addEventListener('message', function(event) {
-    if (event.data && event.data.type === 'resolveFetch') {
-      const { promiseId, response } = event.data;
-      if (pendingFetchResolvers[promiseId]) {
-        try {
-          const reconstructedResponse = new Response(response.body, {
-            status: response.status,
-            statusText: response.statusText,
-            headers: new Headers(response.headers),
-          });
-          pendingFetchResolvers[promiseId](reconstructedResponse);
-        } catch (error) {
-          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
-        }
-      }
-    }
-  });
-
-}))({"textModelName":"gemini-3-flash-preview","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
-</script><script>(function() {
-  const originalConsoleLog = console.log;
-  const originalConsoleError = console.error;
-
-    /**
-   * Normalizes an error event or a promise rejection reason into a structured error object.
-   * @param {*} errorEventOrReason The error object or reason.
-   * @return {object} Structured error data { message, name, stack }.
-   */
-  function getErrorObject(errorEventOrReason) {
-    if (errorEventOrReason instanceof Error) {
-      return {
-        message: errorEventOrReason.message,
-        name: errorEventOrReason.name,
-        stack: errorEventOrReason.stack,
-      };
-    }
-    // Fallback for non-Error objects.
-    try {
-      return {
-        message: JSON.stringify(errorEventOrReason),
-        name: 'UnknownErrorType',
-        stack: null,
-      };
-    } catch (e) {
-      return {
-        message: String(errorEventOrReason),
-        name: 'UnknownErrorTypeNonStringifiable',
-        stack: null,
-      };
-    }
-  }
-
-  /**
-   * Converts an array of arguments (from log/error) into a single string.
-   * Handles Error objects specially to include their message and stack.
-   * @param {Array<*>} args - Arguments passed to console methods.
-   * @return {string} A string representation of the arguments.
-   */
-  function stringifyArgs(args) {
-    return args
-      .map((arg) => {
-        if (arg instanceof Error) {
-          const {message, stack} = arg;
-          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
-        }
-        if (typeof arg === 'object' && arg !== null) {
-          try {
-            return JSON.stringify(arg);
-          } catch (error) {
-            return '[Circular Object]';
-          }
-        } else {
-          return String(arg);
-        }
-      })
-      .join(' ');
-  }
-
-  console.log = function(...args) {
-    const logString = stringifyArgs(args);
-    window.parent.postMessage({ type: 'log', message: logString }, '*');
-    originalConsoleLog.apply(console, args);
-  };
-
-  console.error = function(...args) {
-    let errorData;
-    if (args.length > 0 && args[0] instanceof Error) {
-      const err = args[0];
-      // If the first arg is an Error, capture its details.
-      errorData = {
-        type: 'error',
-        source: 'CONSOLE_ERROR',
-        ...getErrorObject(err),
-        rawArgsString: stringifyArgs(args.slice(1)),
-        timestamp: new Date().toISOString(),
-      };
-    } else {
-      // If not an Error object, treat all args as a general error message.
-      errorData = {
-        type: 'error',
-        source: 'CONSOLE_ERROR',
-        message: stringifyArgs(args),
-        name: 'ConsoleLoggedError',
-        stack: null,
-        timestamp: new Date().toISOString(),
-      };
-    }
-    window.parent.postMessage(errorData, '*');
-    originalConsoleError.apply(console, args);
-  };
-
-  // Listen for global unhandled synchronous errors.
-  window.addEventListener('error', function(event) {
-    const errorDetails = event.error ? getErrorObject(event.error) : {
-      message: event.message,
-      name: 'GlobalError',
-      stack: null,
-      filename: event.filename,
-      lineno: event.lineno,
-      colno: event.colno,
-    };
-
-    window.parent.postMessage({
-      type: 'error',
-      source: 'global',
-      ...errorDetails,
-      message: errorDetails.message || event.message,
-      timestamp: new Date().toISOString(),
-    }, '*');
-  });
-
-  // Listen for unhandled promise rejections (asynchronous errors).
-  window.addEventListener('unhandledrejection', function(event) {
-    const errorDetails = getErrorObject(event.reason);
-
-    window.parent.postMessage({
-      type: 'error',
-      source: 'unhandledrejection',
-      ...errorDetails,
-      message: errorDetails.message || 'Unhandled Promise Rejection',
-      timestamp: new Date().toISOString(),
-    }, '*');
-  });
-
-})();</script>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guardianes del Planeta</title>
+    <title>Asistente Virtual Inteligente</title>
+    <!-- Tailwind CSS para un diseño moderno y fluido -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <!-- Lucide Icons para iconos limpios -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body {
-            font-family: 'Fredoka', sans-serif;
-            background-color: #f0fdf4; /* Light green background */
-            touch-action: manipulation;
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
-        
-        .page { display: none; animation: fadeIn 0.4s ease-in-out; }
-        .page.active { display: flex; flex-direction: column; }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
         }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #80FF80; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #4ade80; }
-
-        /* Sopa de letras grid */
-        .grid-sopa {
-            display: grid;
-            grid-template-columns: repeat(10, 1fr);
-            gap: 4px;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        .celda-sopa {
-            aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            cursor: pointer;
-            user-select: none;
-            transition: all 0.2s;
-        }
-        .celda-sopa.selected {
-            background-color: #fef08a; /* Yellow */
-            border-color: #eab308;
-            color: #854d0e;
-        }
-        .celda-sopa.correct {
-            background-color: #80FF80;
-            border-color: #22c55e;
-            color: #166534;
-        }
-
-        /* Emparejar styles */
-        .match-btn {
-            transition: all 0.2s;
-            border: 3px solid transparent;
-        }
-        .match-btn.selected { border-color: #3b82f6; background-color: #eff6ff; transform: scale(1.05); }
-        .match-btn.matched { border-color: #22c55e; background-color: #80FF80; opacity: 0.7; pointer-events: none; }
-        .match-btn.error { border-color: #ef4444; background-color: #fef2f2; animation: shake 0.4s; }
-
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            50% { transform: translateX(5px); }
-            75% { transform: translateX(-5px); }
-        }
-
-        /* 3R Cards */
-        .card-3r {
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-        .card-3r:hover { transform: translateY(-5px); }
-        .card-content { display: none; }
-        .card-3r.open .card-content { display: block; animation: fadeIn 0.3s; }
-
     </style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.left-4{left:1rem}.right-4{right:1rem}.top-0{top:0px}.top-4{top:1rem}.z-10{z-index:10}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-2{margin-right:0.5rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-4{height:1rem}.h-48{height:12rem}.h-8{height:2rem}.h-full{height:100%}.h-screen{height:100vh}.min-h-\[200px\]{min-height:200px}.w-1\/2{width:50%}.w-32{width:8rem}.w-40{width:10rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-5xl{max-width:64rem}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.animate-bounce{animation:bounce 1s infinite}.cursor-pointer{cursor:pointer}.cursor-not-allowed{cursor:not-allowed}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-1{gap:0.25rem}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-b-xl{border-bottom-right-radius:0.75rem;border-bottom-left-radius:0.75rem}.rounded-t-sm{border-top-left-radius:0.125rem;border-top-right-radius:0.125rem}.border{border-width:1px}.border-2{border-width:2px}.border-4{border-width:4px}.border-8{border-width:8px}.border-b-2{border-bottom-width:2px}.border-t-2{border-top-width:2px}.border-t-8{border-top-width:8px}.border-dashed{border-style:dashed}.border-double{border-style:double}.border-\[\#80FF80\]{--tw-border-opacity:1;border-color:rgb(128 255 128 / var(--tw-border-opacity, 1))}.border-amber-400{--tw-border-opacity:1;border-color:rgb(251 191 36 / var(--tw-border-opacity, 1))}.border-amber-600{--tw-border-opacity:1;border-color:rgb(217 119 6 / var(--tw-border-opacity, 1))}.border-amber-800{--tw-border-opacity:1;border-color:rgb(146 64 14 / var(--tw-border-opacity, 1))}.border-blue-400{--tw-border-opacity:1;border-color:rgb(96 165 250 / var(--tw-border-opacity, 1))}.border-blue-500{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-gray-400{--tw-border-opacity:1;border-color:rgb(156 163 175 / var(--tw-border-opacity, 1))}.border-green-200{--tw-border-opacity:1;border-color:rgb(187 247 208 / var(--tw-border-opacity, 1))}.border-green-500{--tw-border-opacity:1;border-color:rgb(34 197 94 / var(--tw-border-opacity, 1))}.border-transparent{border-color:transparent}.border-yellow-400{--tw-border-opacity:1;border-color:rgb(250 204 21 / var(--tw-border-opacity, 1))}.bg-\[\#80FF80\]{--tw-bg-opacity:1;background-color:rgb(128 255 128 / var(--tw-bg-opacity, 1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.bg-blue-200{--tw-bg-opacity:1;background-color:rgb(191 219 254 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-blue-500{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-green-200{--tw-bg-opacity:1;background-color:rgb(187 247 208 / var(--tw-bg-opacity, 1))}.bg-green-50{--tw-bg-opacity:1;background-color:rgb(240 253 244 / var(--tw-bg-opacity, 1))}.bg-green-500{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.bg-green-600{--tw-bg-opacity:1;background-color:rgb(22 163 74 / var(--tw-bg-opacity, 1))}.bg-red-100{--tw-bg-opacity:1;background-color:rgb(254 226 226 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/50{background-color:rgb(255 255 255 / 0.5)}.bg-yellow-50{--tw-bg-opacity:1;background-color:rgb(254 252 232 / var(--tw-bg-opacity, 1))}.bg-\[url\(\'https\:\/\/www\.transparenttextures\.com\/patterns\/cream-paper\.png\'\)\]{background-image:url('https://www.transparenttextures.com/patterns/cream-paper.png')}.p-10{padding:2.5rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.pb-2{padding-bottom:0.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-6xl{font-size:3.75rem;line-height:1}.text-8xl{font-size:6rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.text-amber-700{--tw-text-opacity:1;color:rgb(180 83 9 / var(--tw-text-opacity, 1))}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14 / var(--tw-text-opacity, 1))}.text-amber-900{--tw-text-opacity:1;color:rgb(120 53 15 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.text-blue-800{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-green-700{--tw-text-opacity:1;color:rgb(21 128 61 / var(--tw-text-opacity, 1))}.text-green-800{--tw-text-opacity:1;color:rgb(22 101 52 / var(--tw-text-opacity, 1))}.text-green-900{--tw-text-opacity:1;color:rgb(20 83 45 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-600{--tw-text-opacity:1;color:rgb(202 138 4 / var(--tw-text-opacity, 1))}.opacity-30{opacity:0.3}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-\[\#80FF80\]:hover{--tw-border-opacity:1;border-color:rgb(128 255 128 / var(--tw-border-opacity, 1))}.hover\:bg-blue-600:hover{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-300:hover{--tw-bg-opacity:1;background-color:rgb(209 213 219 / var(--tw-bg-opacity, 1))}.hover\:bg-green-400:hover{--tw-bg-opacity:1;background-color:rgb(74 222 128 / var(--tw-bg-opacity, 1))}.hover\:bg-green-50:hover{--tw-bg-opacity:1;background-color:rgb(240 253 244 / var(--tw-bg-opacity, 1))}.hover\:bg-green-600:hover{--tw-bg-opacity:1;background-color:rgb(22 163 74 / var(--tw-bg-opacity, 1))}.focus\:border-green-500:focus{--tw-border-opacity:1;border-color:rgb(34 197 94 / var(--tw-border-opacity, 1))}.disabled\:cursor-not-allowed:disabled{cursor:not-allowed}.disabled\:opacity-50:disabled{opacity:0.5}@media (min-width: 640px){.sm\:inline{display:inline}}@media (min-width: 768px){.md\:block{display:block}.md\:inline{display:inline}.md\:w-1\/2{width:50%}.md\:w-64{width:16rem}.md\:w-auto{width:auto}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:p-8{padding:2rem}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-sm{font-size:0.875rem;line-height:1.25rem}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style></head>
-<body class="h-screen flex flex-col overflow-hidden text-gray-800">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
 
-    <!-- Header -->
-    <header class="bg-[#80FF80] p-4 shadow-md flex justify-between items-center shrink-0 z-10">
-        <div class="flex items-center gap-2">
-            <span class="text-3xl">🌍</span>
-            <div>
-                <h1 class="text-xl md:text-2xl font-bold text-green-900">Guardianes del Planeta</h1>
-                <p class="text-xs md:text-sm text-green-800 font-medium">Reducir, Reutilizar, Reciclar</p>
-            </div>
-        </div>
-        <div class="flex items-center gap-3">
-            <div class="hidden md:block text-sm font-semibold text-green-900 bg-white/50 px-3 py-1 rounded-full">
-                Grupo 1
-            </div>
-            <!-- Botón de descarga integrado -->
-            <button onclick="descargarJuego()" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2 px-3 rounded-lg shadow-md flex items-center gap-2 transition transform hover:scale-105" title="Descargar archivo para jugar sin internet">
-                📥 <span class="hidden sm:inline">Descargar Archivo</span>
-            </button>
-        </div>
-    </header>
-
-    <!-- Main Content Area -->
-    <main class="flex-1 overflow-y-auto p-4 md:p-8 relative w-full max-w-5xl mx-auto">
-        
-        <!-- PÁGINA 1: Portada -->
-        <div id="page-1" class="page h-full justify-center items-center text-center active">
-            <div class="text-6xl mb-6 animate-bounce">🌱🌍♻️</div>
-            <h2 class="text-3xl md:text-5xl font-bold text-green-700 mb-8">Diseño de Contenido Educativo Interactivo</h2>
-            <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-[#80FF80] text-left">
-                <h3 class="text-2xl font-bold border-b-2 border-green-200 pb-2 mb-4">GRUPO 1:</h3>
-                <ul class="text-lg space-y-2 text-gray-700">
-                    <li>👨‍🎓 Calero Calero Stalyn Ramo</li>
-                    <li>👨‍🎓 Farez Gaona Eduardo Joshue</li>
-                    <li>👩‍🎓 Granda Miles Laura Alexandra</li>
-                    <li>👩‍🎓 Naranjo Ruiz Ximena Yadira</li>
-                    <li>👨‍🎓 Pardo Montero Juan Pablo</li>
-                </ul>
-            </div>
-            <p class="mt-8 text-sm text-gray-500">Guardianes del planeta © 2026 by Grupo 1 is licensed under CC BY-NC-ND 4.0</p>
-        </div>
-
-        <!-- PÁGINA 2: Índice -->
-        <div id="page-2" class="page">
-            <h2 class="text-3xl font-bold text-center text-green-700 mb-8">Índice de Misiones</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <button onclick="goToPage(3)" class="bg-white p-4 rounded-xl shadow border-2 border-transparent hover:border-[#80FF80] text-left transition flex items-center gap-4">
-                    <span class="text-3xl">🎯</span> <div><b class="text-lg">1. El Reto</b><br><span class="text-sm">El problema de la basura</span></div>
-                </button>
-                <button onclick="goToPage(4)" class="bg-white p-4 rounded-xl shadow border-2 border-transparent hover:border-[#80FF80] text-left transition flex items-center gap-4">
-                    <span class="text-3xl">✨</span> <div><b class="text-lg">2. Las 3R</b><br><span class="text-sm">Secretos para cuidar la Tierra</span></div>
-                </button>
-                <button onclick="goToPage(5)" class="bg-white p-4 rounded-xl shadow border-2 border-transparent hover:border-[#80FF80] text-left transition flex items-center gap-4">
-                    <span class="text-3xl">🔍</span> <div><b class="text-lg">3. Sopa de Letras</b><br><span class="text-sm">Busca las palabras mágicas</span></div>
-                </button>
-                <button onclick="goToPage(6)" class="bg-white p-4 rounded-xl shadow border-2 border-transparent hover:border-[#80FF80] text-left transition flex items-center gap-4">
-                    <span class="text-3xl">🧠</span> <div><b class="text-lg">4. Memoria 3R</b><br><span class="text-sm">Dale una segunda vida</span></div>
-                </button>
-                <button onclick="goToPage(7)" class="bg-white p-4 rounded-xl shadow border-2 border-transparent hover:border-[#80FF80] text-left transition flex items-center gap-4">
-                    <span class="text-3xl">🗑️</span> <div><b class="text-lg">5. ¡A Clasificar!</b><br><span class="text-sm">Ordena en los contenedores</span></div>
-                </button>
-                <button onclick="goToPage(8)" class="bg-white p-4 rounded-xl shadow border-2 border-transparent hover:border-[#80FF80] text-left transition flex items-center gap-4">
-                    <span class="text-3xl">🔄</span> <div><b class="text-lg">6. El Ciclo</b><br><span class="text-sm">Ordena el camino de la basura</span></div>
-                </button>
-                <button onclick="goToPage(9)" class="bg-white p-4 rounded-xl shadow border-2 border-transparent hover:border-[#80FF80] text-left transition flex items-center gap-4">
-                    <span class="text-3xl">❓</span> <div><b class="text-lg">7. Trivia</b><br><span class="text-sm">Demuestra lo que sabes</span></div>
-                </button>
-                <button onclick="goToPage(10)" class="bg-white p-4 rounded-xl shadow border-2 border-transparent hover:border-[#80FF80] text-left transition flex items-center gap-4">
-                    <span class="text-3xl">📝</span> <div><b class="text-lg">8. Examen Final</b><br><span class="text-sm">Tu última prueba</span></div>
-                </button>
-                <button onclick="goToPage(11)" class="bg-white p-4 rounded-xl shadow border-2 border-transparent hover:border-[#80FF80] text-left transition flex items-center gap-4">
-                    <span class="text-3xl">🎓</span> <div><b class="text-lg">9. Tu Diploma</b><br><span class="text-sm">¡Misión cumplida!</span></div>
-                </button>
-            </div>
-        </div>
-
-        <!-- PÁGINA 3: Info - El Reto -->
-        <div id="page-3" class="page h-full justify-center">
-            <div class="bg-white p-8 rounded-3xl shadow-xl border-4 border-green-200 text-center max-w-3xl mx-auto">
-                <div class="text-8xl mb-6">🏭🔥🗑️</div>
-                <h2 class="text-4xl font-bold text-red-600 mb-6">El Desafío de Nuestro Hogar</h2>
-                <p class="text-2xl leading-relaxed text-gray-700">
-                    Cada año generamos toneladas de basura que dañan nuestro hogar. <br><br>
-                    ¿Sabías que una botella de plástico tarda <strong class="text-red-600 text-3xl bg-red-100 px-2 rounded">500 años</strong> en desaparecer?
-                </p>
-                <p class="mt-8 text-xl font-bold text-green-600">¡Necesitamos tu ayuda para cambiar esto!</p>
-            </div>
-        </div>
-
-        <!-- PÁGINA 4: Interactiva - Las 3R -->
-        <div id="page-4" class="page h-full">
-            <h2 class="text-3xl font-bold text-center text-green-700 mb-4">¡Conviértete en un experto!</h2>
-            <p class="text-center text-lg mb-8">Haz clic en cada pilar para descubrir los secretos de las 3R.</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 flex-1">
-                <div class="card-3r bg-white p-6 rounded-2xl shadow-lg border-t-8 border-yellow-400 text-center" onclick="this.classList.toggle('open')">
-                    <div class="text-6xl mb-4">📉</div>
-                    <h3 class="text-2xl font-bold text-yellow-600 mb-4">REDUCIR</h3>
-                    <p class="text-sm text-gray-500 mb-4">(Toca para leer)</p>
-                    <div class="card-content text-gray-700 text-left bg-yellow-50 p-4 rounded-lg">
-                        ¡Menos es más! La mejor basura es la que no se genera. Antes de comprar, piensa si realmente lo necesitas. Evita los productos con mucho plástico y lleva siempre tu propia bolsa de tela. ¡Corta el problema de raíz!
+    <!-- Navegación -->
+    <nav class="bg-white border-b border-slate-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-indigo-600 text-white p-2 rounded-lg">
+                        <i data-lucide="bot" class="w-6 h-6"></i>
                     </div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+                        Asistente Virtual
+                    </span>
                 </div>
-
-                <div class="card-3r bg-white p-6 rounded-2xl shadow-lg border-t-8 border-blue-400 text-center" onclick="this.classList.toggle('open')">
-                    <div class="text-6xl mb-4">🛠️</div>
-                    <h3 class="text-2xl font-bold text-blue-600 mb-4">REUTILIZAR</h3>
-                    <p class="text-sm text-gray-500 mb-4">(Toca para leer)</p>
-                    <div class="card-content text-gray-700 text-left bg-blue-50 p-4 rounded-lg">
-                        ¡No lo tires, dales otra oportunidad! Muchos objetos pueden tener una segunda vida: usa los frascos de vidrio para guardar lápices, convierte la ropa vieja en trapos o usa ambos lados del papel. ¡Usa tu imaginación y sé creativo!
-                    </div>
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#inicio" class="hover:text-indigo-600 transition-colors">Inicio</a>
+                    <a href="#beneficios" class="hover:text-indigo-600 transition-colors">Beneficios</a>
+                    <a href="#instrucciones" class="hover:text-indigo-600 transition-colors">¿Cómo usar?</a>
                 </div>
-
-                <div class="card-3r bg-white p-6 rounded-2xl shadow-lg border-t-8 border-green-500 text-center" onclick="this.classList.toggle('open')">
-                    <div class="text-6xl mb-4">♻️</div>
-                    <h3 class="text-2xl font-bold text-green-600 mb-4">RECICLAR</h3>
-                    <p class="text-sm text-gray-500 mb-4">(Toca para leer)</p>
-                    <div class="card-content text-gray-700 text-left bg-green-50 p-4 rounded-lg">
-                        Cuando algo ya no sirve, sepáralo correctamente. El plástico, el papel y el vidrio pueden transformarse en cosas nuevas si los pones en su contenedor. Así evitamos que acaben en el mar dañando a los animales. ¡Cierra el ciclo!
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 5: Sopa de Letras -->
-        <div id="page-5" class="page h-full">
-            <h2 class="text-2xl md:text-3xl font-bold text-center text-green-700 mb-2">¡Misión Verde! Sopa de Letras</h2>
-            <p class="text-center mb-4 text-sm md:text-base">Haz clic en las letras para resaltar las 6 palabras ocultas. Luego presiona Verificar.</p>
-            
-            <div class="flex flex-col md:flex-row gap-8 justify-center items-start">
-                <div class="bg-white p-4 rounded-xl shadow-lg border-2 border-green-200">
-                    <div id="sopa-grid" class="grid-sopa"><div class="celda-sopa" data-word="true">P</div><div class="celda-sopa" data-word="true">L</div><div class="celda-sopa" data-word="true">A</div><div class="celda-sopa" data-word="true">N</div><div class="celda-sopa" data-word="true">E</div><div class="celda-sopa" data-word="true">T</div><div class="celda-sopa" data-word="true">A</div><div class="celda-sopa">N</div><div class="celda-sopa">D</div><div class="celda-sopa">Q</div><div class="celda-sopa">A</div><div class="celda-sopa">J</div><div class="celda-sopa">Y</div><div class="celda-sopa">E</div><div class="celda-sopa">T</div><div class="celda-sopa">X</div><div class="celda-sopa">T</div><div class="celda-sopa">E</div><div class="celda-sopa">Z</div><div class="celda-sopa">Z</div><div class="celda-sopa">H</div><div class="celda-sopa">D</div><div class="celda-sopa">P</div><div class="celda-sopa">W</div><div class="celda-sopa">T</div><div class="celda-sopa">F</div><div class="celda-sopa">N</div><div class="celda-sopa">F</div><div class="celda-sopa">R</div><div class="celda-sopa">A</div><div class="celda-sopa" data-word="true">R</div><div class="celda-sopa" data-word="true">E</div><div class="celda-sopa" data-word="true">U</div><div class="celda-sopa" data-word="true">T</div><div class="celda-sopa" data-word="true">I</div><div class="celda-sopa" data-word="true">L</div><div class="celda-sopa" data-word="true">I</div><div class="celda-sopa" data-word="true">Z</div><div class="celda-sopa" data-word="true">A</div><div class="celda-sopa" data-word="true">R</div><div class="celda-sopa">X</div><div class="celda-sopa">W</div><div class="celda-sopa">V</div><div class="celda-sopa">D</div><div class="celda-sopa">T</div><div class="celda-sopa">A</div><div class="celda-sopa">O</div><div class="celda-sopa">X</div><div class="celda-sopa">S</div><div class="celda-sopa">W</div><div class="celda-sopa">S</div><div class="celda-sopa" data-word="true">R</div><div class="celda-sopa" data-word="true">E</div><div class="celda-sopa" data-word="true">C</div><div class="celda-sopa" data-word="true">I</div><div class="celda-sopa" data-word="true">C</div><div class="celda-sopa" data-word="true">L</div><div class="celda-sopa" data-word="true">A</div><div class="celda-sopa" data-word="true">R</div><div class="celda-sopa">L</div><div class="celda-sopa">B</div><div class="celda-sopa">D</div><div class="celda-sopa">P</div><div class="celda-sopa">N</div><div class="celda-sopa">J</div><div class="celda-sopa">L</div><div class="celda-sopa">M</div><div class="celda-sopa">K</div><div class="celda-sopa" data-word="true">M</div><div class="celda-sopa">F</div><div class="celda-sopa">I</div><div class="celda-sopa">U</div><div class="celda-sopa" data-word="true">V</div><div class="celda-sopa" data-word="true">I</div><div class="celda-sopa" data-word="true">D</div><div class="celda-sopa" data-word="true">A</div><div class="celda-sopa">Y</div><div class="celda-sopa">U</div><div class="celda-sopa" data-word="true">A</div><div class="celda-sopa">D</div><div class="celda-sopa">C</div><div class="celda-sopa">R</div><div class="celda-sopa">Y</div><div class="celda-sopa">U</div><div class="celda-sopa">K</div><div class="celda-sopa">L</div><div class="celda-sopa">I</div><div class="celda-sopa">Y</div><div class="celda-sopa" data-word="true">R</div><div class="celda-sopa">J</div><div class="celda-sopa">F</div><div class="celda-sopa">E</div><div class="celda-sopa">W</div><div class="celda-sopa">U</div><div class="celda-sopa">Z</div><div class="celda-sopa" data-word="true">T</div><div class="celda-sopa" data-word="true">E</div><div class="celda-sopa" data-word="true">L</div><div class="celda-sopa" data-word="true">A</div><div class="celda-sopa">J</div></div>
-                </div>
-                
-                <div class="bg-white p-6 rounded-xl shadow-lg border-2 border-green-200 w-full md:w-64">
-                    <h3 class="font-bold text-lg mb-4 text-green-800">Busca estas palabras:</h3>
-                    <ul class="space-y-3 text-gray-700 font-medium">
-                        <li id="word-planeta" class="flex items-center gap-2">🌍 PLANETA</li>
-                        <li id="word-mar" class="flex items-center gap-2">🌊 MAR</li>
-                        <li id="word-vida" class="flex items-center gap-2">🌱 VIDA</li>
-                        <li id="word-tela" class="flex items-center gap-2">🛍️ TELA</li>
-                        <li id="word-reutilizar" class="flex items-center gap-2">🛠️ REUTILIZAR</li>
-                        <li id="word-reciclar" class="flex items-center gap-2">♻️ RECICLAR</li>
-                    </ul>
-                    <button onclick="checkSopa()" class="mt-6 w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl shadow transition text-lg">
-                        Verificar
+                <div>
+                    <button onclick="document.getElementById('chatbot-container').scrollIntoView({ behavior: 'smooth' })" class="bg-indigo-50 text-indigo-600 px-4 py-2 rounded-full text-sm font-semibold hover:bg-indigo-100 transition-all">
+                        Soporte 24/7
                     </button>
-                    <p id="sopa-msg" class="mt-3 text-center font-bold hidden"></p>
                 </div>
             </div>
         </div>
-
-        <!-- PÁGINA 6: Emparejar -->
-        <div id="page-6" class="page h-full">
-            <h2 class="text-2xl md:text-3xl font-bold text-center text-green-700 mb-2">Memoria 3R: Dale una segunda vida</h2>
-            <p class="text-center mb-6">Selecciona un objeto viejo (izquierda) y en qué se puede transformar (derecha).</p>
-
-            <div class="flex justify-between max-w-2xl mx-auto gap-4">
-                <!-- Columna Izquierda -->
-                <div class="flex flex-col gap-4 w-1/2" id="col-old">
-                    <button class="match-btn bg-white p-4 rounded-xl shadow text-xl font-bold flex items-center gap-3" data-id="1" data-side="left">🧦 Calcetín</button>
-                    <button class="match-btn bg-white p-4 rounded-xl shadow text-xl font-bold flex items-center gap-3" data-id="2" data-side="left">🛞 Llanta</button>
-                    <button class="match-btn bg-white p-4 rounded-xl shadow text-xl font-bold flex items-center gap-3" data-id="3" data-side="left">📦 Cartón</button>
-                    <button class="match-btn bg-white p-4 rounded-xl shadow text-xl font-bold flex items-center gap-3" data-id="4" data-side="left">🍾 Cristal</button>
-                </div>
-                <!-- Columna Derecha -->
-                <div class="flex flex-col gap-4 w-1/2" id="col-new">
-                    <button class="match-btn bg-white p-4 rounded-xl shadow text-xl font-bold flex items-center justify-end gap-3" data-id="4" data-side="right">Florero 💐</button>
-                    <button class="match-btn bg-white p-4 rounded-xl shadow text-xl font-bold flex items-center justify-end gap-3" data-id="1" data-side="right">Muñeco 🧸</button>
-                    <button class="match-btn bg-white p-4 rounded-xl shadow text-xl font-bold flex items-center justify-end gap-3" data-id="3" data-side="right">Cuna 🛏️</button>
-                    <button class="match-btn bg-white p-4 rounded-xl shadow text-xl font-bold flex items-center justify-end gap-3" data-id="2" data-side="right">Columpio 🎠</button>
-                </div>
-            </div>
-            <p id="match-msg" class="text-center mt-8 text-2xl font-bold text-green-600 hidden">¡Excelente! Todos los objetos tienen nueva vida.</p>
-        </div>
-
-        <!-- PÁGINA 7: Clasificar (Click to move) -->
-        <div id="page-7" class="page h-full">
-            <h2 class="text-2xl md:text-3xl font-bold text-center text-green-700 mb-2">¡A Clasificar!</h2>
-            <p class="text-center mb-6">Toca un residuo y luego toca el contenedor correcto al que pertenece.</p>
-
-            <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
-                <!-- Zona de residuos -->
-                <div class="bg-white p-4 rounded-xl border-2 border-dashed border-gray-400 w-full md:w-1/2 min-h-[200px] flex flex-wrap justify-center gap-4" id="residuos-container">
-                    <div class="residuo cursor-pointer bg-gray-100 p-3 rounded-lg shadow border-2 border-transparent text-center font-bold" data-tipo="verde" onclick="selectResiduo(this)">🥤 Vasos Plásticos</div>
-                    <div class="residuo cursor-pointer bg-gray-100 p-3 rounded-lg shadow border-2 border-transparent text-center font-bold" data-tipo="azul" onclick="selectResiduo(this)">🧻 Rollo de Cartón</div>
-                    <div class="residuo cursor-pointer bg-gray-100 p-3 rounded-lg shadow border-2 border-transparent text-center font-bold" data-tipo="azul" onclick="selectResiduo(this)">📄 Papel</div>
-                    <div class="residuo cursor-pointer bg-gray-100 p-3 rounded-lg shadow border-2 border-transparent text-center font-bold" data-tipo="verde" onclick="selectResiduo(this)">🧴 Plásticos</div>
-                    <div class="residuo cursor-pointer bg-gray-100 p-3 rounded-lg shadow border-2 border-transparent text-center font-bold" data-tipo="azul" onclick="selectResiduo(this)">📦 Cartones</div>
-                    <div class="residuo cursor-pointer bg-gray-100 p-3 rounded-lg shadow border-2 border-transparent text-center font-bold" data-tipo="azul" onclick="selectResiduo(this)">📰 Periódicos</div>
-                </div>
-
-                <!-- Contenedores -->
-                <div class="flex gap-4 w-full md:w-1/2 justify-center">
-                    <div class="contenedor cursor-pointer bg-green-200 border-4 border-green-500 rounded-b-xl rounded-t-sm w-40 h-48 flex flex-col items-center p-2 relative" onclick="dropResiduo('verde')">
-                        <div class="w-full h-4 bg-green-600 absolute top-0 rounded-t-sm"></div>
-                        <span class="mt-6 text-4xl">♻️</span>
-                        <b class="text-green-800 mt-2 text-center">CONTENEDOR<br>VERDE</b>
-                        <span class="text-xs text-green-700">(Plásticos)</span>
-                        <div class="dropped-items text-sm text-center mt-2 overflow-hidden w-full space-y-1" id="bin-verde"></div>
-                    </div>
-                    
-                    <div class="contenedor cursor-pointer bg-blue-200 border-4 border-blue-500 rounded-b-xl rounded-t-sm w-40 h-48 flex flex-col items-center p-2 relative" onclick="dropResiduo('azul')">
-                        <div class="w-full h-4 bg-blue-600 absolute top-0 rounded-t-sm"></div>
-                        <span class="mt-6 text-4xl">♻️</span>
-                        <b class="text-blue-800 mt-2 text-center">CONTENEDOR<br>AZUL</b>
-                        <span class="text-xs text-blue-700">(Papel/Cartón)</span>
-                        <div class="dropped-items text-sm text-center mt-2 overflow-hidden w-full space-y-1" id="bin-azul"></div>
-                    </div>
-                </div>
-            </div>
-            <p id="classify-msg" class="text-center mt-6 text-xl font-bold h-8"></p>
-        </div>
-
-        <!-- PÁGINA 8: Ordenar Ciclo -->
-        <div id="page-8" class="page h-full">
-            <h2 class="text-2xl md:text-3xl font-bold text-center text-green-700 mb-2">El Ciclo de Vida de un Envase</h2>
-            <p class="text-center mb-6">Usa los botones para ordenar correctamente las escenas del 1 al 4.</p>
-
-            <div class="max-w-md mx-auto bg-white p-4 rounded-xl shadow-lg border-2 border-green-200" id="sort-list"><div class="flex justify-between items-center bg-gray-50 p-3 mb-2 rounded border border-gray-200"><span class="font-bold text-lg">♻️ 3. Depositar en contenedor verde</span><div class="flex flex-col gap-1"><button class="bg-gray-200 px-2 py-0.5 rounded hover:bg-gray-300 opacity-30 cursor-not-allowed">▲</button><button class="bg-gray-200 px-2 py-0.5 rounded hover:bg-gray-300 ">▼</button></div></div><div class="flex justify-between items-center bg-gray-50 p-3 mb-2 rounded border border-gray-200"><span class="font-bold text-lg">🛒 1. Comprar y consumir producto</span><div class="flex flex-col gap-1"><button class="bg-gray-200 px-2 py-0.5 rounded hover:bg-gray-300 ">▲</button><button class="bg-gray-200 px-2 py-0.5 rounded hover:bg-gray-300 ">▼</button></div></div><div class="flex justify-between items-center bg-gray-50 p-3 mb-2 rounded border border-gray-200"><span class="font-bold text-lg">🏭 4. Planta de reciclaje</span><div class="flex flex-col gap-1"><button class="bg-gray-200 px-2 py-0.5 rounded hover:bg-gray-300 ">▲</button><button class="bg-gray-200 px-2 py-0.5 rounded hover:bg-gray-300 ">▼</button></div></div><div class="flex justify-between items-center bg-gray-50 p-3 mb-2 rounded border border-gray-200"><span class="font-bold text-lg">🗑️ 2. Separar envase vacío</span><div class="flex flex-col gap-1"><button class="bg-gray-200 px-2 py-0.5 rounded hover:bg-gray-300 ">▲</button><button class="bg-gray-200 px-2 py-0.5 rounded hover:bg-gray-300 opacity-30 cursor-not-allowed">▼</button></div></div></div>
-            
-            <div class="text-center mt-8">
-                <button onclick="checkOrder()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-xl shadow transition text-lg">
-                    Comprobar Orden
-                </button>
-                <p id="order-msg" class="mt-4 text-xl font-bold hidden"></p>
-            </div>
-        </div>
-
-        <!-- PÁGINA 9: Trivia -->
-        <div id="page-9" class="page h-full">
-            <h2 class="text-3xl font-bold text-center text-green-700 mb-6">Trivia de los Guardianes</h2>
-            
-            <div class="max-w-2xl mx-auto space-y-6">
-                <!-- P1 -->
-                <div class="bg-white p-4 rounded-xl shadow border border-gray-200 quiz-question" data-answer="1">
-                    <p class="font-bold text-lg mb-3">1. ¿Qué color de contenedor se usa para las revistas y cajas de cartón?</p>
-                    <div class="flex flex-col gap-2">
-                        <label class="p-3 bg-gray-50 rounded border cursor-pointer hover:bg-green-50"><input type="radio" name="q1" value="0" class="mr-2"> Amarillo</label>
-                        <label class="p-3 bg-gray-50 rounded border cursor-pointer hover:bg-green-50"><input type="radio" name="q1" value="1" class="mr-2"> Azul</label>
-                        <label class="p-3 bg-gray-50 rounded border cursor-pointer hover:bg-green-50"><input type="radio" name="q1" value="0" class="mr-2"> Verde</label>
-                    </div>
-                </div>
-                <!-- P2 -->
-                <div class="bg-white p-4 rounded-xl shadow border border-gray-200 quiz-question" data-answer="1">
-                    <p class="font-bold text-lg mb-3">2. ¿Cuál es la R más importante para no generar basura?</p>
-                    <div class="flex flex-col gap-2">
-                        <label class="p-3 bg-gray-50 rounded border cursor-pointer hover:bg-green-50"><input type="radio" name="q2" value="0" class="mr-2"> Reciclar</label>
-                        <label class="p-3 bg-gray-50 rounded border cursor-pointer hover:bg-green-50"><input type="radio" name="q2" value="1" class="mr-2"> Reducir</label>
-                        <label class="p-3 bg-gray-50 rounded border cursor-pointer hover:bg-green-50"><input type="radio" name="q2" value="0" class="mr-2"> Reutilizar</label>
-                    </div>
-                </div>
-                <!-- P3 -->
-                <div class="bg-white p-4 rounded-xl shadow border border-gray-200 quiz-question" data-answer="1">
-                    <p class="font-bold text-lg mb-3">3. Si convierto una lata de refresco en un portalápices, estoy...</p>
-                    <div class="flex flex-col gap-2">
-                        <label class="p-3 bg-gray-50 rounded border cursor-pointer hover:bg-green-50"><input type="radio" name="q3" value="0" class="mr-2"> Reduciendo</label>
-                        <label class="p-3 bg-gray-50 rounded border cursor-pointer hover:bg-green-50"><input type="radio" name="q3" value="1" class="mr-2"> Reutilizando</label>
-                        <label class="p-3 bg-gray-50 rounded border cursor-pointer hover:bg-green-50"><input type="radio" name="q3" value="0" class="mr-2"> Reciclando</label>
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <button onclick="checkTrivia()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl shadow transition text-lg w-full md:w-auto">
-                        Verificar Respuestas
-                    </button>
-                    <p id="trivia-msg" class="mt-4 font-bold text-xl hidden"></p>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 10: Examen Final (Relacionar) -->
-        <div id="page-10" class="page h-full">
-            <h2 class="text-2xl md:text-3xl font-bold text-center text-green-700 mb-2">Examen Final</h2>
-            <p class="text-center mb-6 text-lg">Empareja la acción con el concepto correspondiente.</p>
-
-            <div class="flex justify-between max-w-3xl mx-auto gap-4">
-                <!-- Columna Acciones (Izquierda) -->
-                <div class="flex flex-col gap-4 w-1/2" id="col-final-left">
-                    <button class="match-final-btn bg-white p-4 rounded-xl shadow text-lg font-bold border-2 border-transparent transition" data-id="1" data-side="left">Botella de vidrio vacía</button>
-                    <button class="match-final-btn bg-white p-4 rounded-xl shadow text-lg font-bold border-2 border-transparent transition" data-id="2" data-side="left">Usar el reverso de una hoja de papel</button>
-                    <button class="match-final-btn bg-white p-4 rounded-xl shadow text-lg font-bold border-2 border-transparent transition" data-id="3" data-side="left">Comprar fruta sin bolsas de plástico</button>
-                </div>
-                <!-- Columna Conceptos (Derecha) -->
-                <div class="flex flex-col gap-4 w-1/2" id="col-final-right">
-                    <button class="match-final-btn bg-white p-4 rounded-xl shadow text-lg font-bold border-2 border-transparent transition text-right" data-id="2" data-side="right">Acción de Reutilizar</button>
-                    <button class="match-final-btn bg-white p-4 rounded-xl shadow text-lg font-bold border-2 border-transparent transition text-right" data-id="3" data-side="right">Acción de Reducir</button>
-                    <button class="match-final-btn bg-white p-4 rounded-xl shadow text-lg font-bold border-2 border-transparent transition text-right" data-id="1" data-side="right">Contenedor Verde (Iglú)</button>
-                </div>
-            </div>
-            <p id="final-match-msg" class="text-center mt-8 text-2xl font-bold text-green-600 hidden">¡Excelente! Has demostrado ser un verdadero Guardián.</p>
-        </div>
-
-        <!-- PÁGINA 11: Diploma -->
-        <div id="page-11" class="page h-full justify-center items-center">
-            <div id="diploma-form" class="bg-white p-8 rounded-2xl shadow-xl border-4 border-[#80FF80] text-center max-w-md w-full">
-                <div class="text-6xl mb-4">🏆</div>
-                <h2 class="text-3xl font-bold text-green-700 mb-4">¡FELICIDADES, GUARDIÁN!</h2>
-                <p class="text-gray-700 mb-6">Has completado el entrenamiento con éxito. Ahora tienes el poder de proteger la Tierra con las 3R.</p>
-                <input type="text" id="nombre-guardian" placeholder="Escribe tu nombre aquí..." class="w-full p-3 border-2 border-gray-300 rounded-lg mb-4 text-center text-lg font-bold focus:border-green-500 outline-none">
-                <button onclick="generarDiploma()" class="w-full bg-[#80FF80] hover:bg-green-400 text-green-900 font-bold py-3 rounded-xl shadow transition text-lg">
-                    Obtener Diploma
-                </button>
-            </div>
-
-            <!-- Certificado Generado -->
-            <div id="diploma-cert" class="hidden relative bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] bg-amber-50 p-10 border-8 border-double border-amber-600 rounded-lg text-center max-w-2xl w-full shadow-2xl">
-                <div class="absolute top-4 left-4 text-4xl">🌿</div>
-                <div class="absolute top-4 right-4 text-4xl">🌿</div>
-                <h1 class="text-4xl md:text-5xl font-bold text-amber-800 mb-2 uppercase" style="font-family: serif;">Diploma de Honor</h1>
-                <p class="text-lg text-amber-700 italic mb-6">Concedido a:</p>
-                <h2 id="cert-name" class="text-4xl font-bold text-green-800 mb-6 border-b-2 border-amber-400 pb-2 inline-block px-8"></h2>
-                <p class="text-xl text-amber-900 mb-8 leading-relaxed">
-                    Por haber superado todas las pruebas y demostrar un firme compromiso con la protección de nuestro planeta a través de las 3R: <br>
-                    <b>Reducir, Reutilizar y Reciclar.</b>
-                </p>
-                <div class="flex justify-between items-end mt-8">
-                    <div class="text-center">
-                        <div class="w-32 border-b-2 border-amber-800 mb-1"></div>
-                        <span class="text-sm font-bold text-amber-800">Grupo 1</span>
-                    </div>
-                    <div class="text-6xl">🌍♻️</div>
-                    <div class="text-center">
-                        <div class="w-32 border-b-2 border-amber-800 mb-1"></div>
-                        <span class="text-sm font-bold text-amber-800">2026</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Bottom Navigation -->
-    <nav class="bg-white border-t-2 border-gray-200 p-4 shrink-0 flex justify-between items-center z-10">
-        <button onclick="prevPage()" id="btn-prev" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg flex items-center gap-2 transition disabled:opacity-50 disabled:cursor-not-allowed" disabled="">
-            ◀ <span class="hidden md:inline">Anterior</span>
-        </button>
-        
-        <div class="text-lg font-bold text-green-800 bg-green-100 px-4 py-1 rounded-full">
-            Página <span id="current-page-indicator">1</span> de 11
-        </div>
-
-        <button onclick="nextPage()" id="btn-next" class="bg-[#80FF80] hover:bg-green-400 text-green-900 font-bold py-2 px-4 rounded-lg flex items-center gap-2 transition disabled:opacity-50 disabled:cursor-not-allowed">
-            <span class="hidden md:inline">Siguiente</span> ▶
-        </button>
     </nav>
 
-    <!-- Audio API setup -->
+    <!-- Héroe (Sección Principal) -->
+    <main class="flex-grow">
+        <section id="inicio" class="relative overflow-hidden py-12 lg:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Texto de Bienvenida (5 columnas en pantallas grandes) -->
+                    <div class="space-y-6 text-center lg:text-left lg:col-span-5">
+                        <div class="inline-flex items-center space-x-2 bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                            <span class="flex h-2 w-2 relative">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-600"></span>
+                            </span>
+                            <span>Asistente en línea listo</span>
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl font-black text-slate-900 leading-tight">
+                            ¿Tienes dudas? <br>
+                            <span class="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+                                Chatea aquí en vivo
+                            </span>
+                        </h1>
+                        <p class="text-lg text-slate-600 max-w-lg mx-auto lg:mx-0">
+                            Interactúa directamente con nuestro chatbot inteligente integrado en el recuadro de al lado. Obtén respuestas automáticas e inmediatas a cualquier hora.
+                        </p>
+                        <div class="pt-2 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                            <button onclick="document.getElementById('chatbot-container').scrollIntoView({ behavior: 'smooth' })" class="bg-indigo-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:bg-indigo-700 hover:shadow-xl transition-all flex items-center justify-center space-x-3 group">
+                                <span>Ir al Chatbot</span>
+                                <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                            <a href="#beneficios" class="border border-slate-200 text-slate-600 px-8 py-4 rounded-xl font-semibold hover:bg-slate-50 transition-all flex items-center justify-center">
+                                Saber más
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Chatbot Real Incrustado (7 columnas en pantallas grandes) -->
+                    <div id="chatbot-container" class="lg:col-span-7 flex justify-center relative w-full">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-3xl opacity-15 blur-2xl"></div>
+                        <div class="relative w-full h-[550px] bg-white border border-slate-100 rounded-2xl shadow-2xl overflow-hidden">
+                            <!-- Iframe con el chatbot de Chatbase en vivo -->
+                            <iframe
+                                src="https://www.chatbase.co/chatbot-iframe/oD55uJwRkG4F9S5HkMkEF"
+                                title="Asistente Virtual Chatbase"
+                                width="100%"
+                                height="100%"
+                                class="w-full h-full rounded-2xl border-0"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Beneficios -->
+        <section id="beneficios" class="py-16 bg-slate-50 border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900">¿Por qué usar nuestro chatbot?</h2>
+                    <p class="text-slate-600 mt-4">Optimizamos tu experiencia con tecnología ágil y disponible en todo momento.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Beneficio 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 mb-6">
+                            <i data-lucide="zap" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Sin Esperas</h3>
+                        <p class="text-slate-600">Obtén respuestas exactas inmediatamente, sin tener que esperar a que un operador se libere.</p>
+                    </div>
+                    <!-- Beneficio 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-violet-50 rounded-xl flex items-center justify-center text-violet-600 mb-6">
+                            <i data-lucide="clock" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Disponible 24/7</h3>
+                        <p class="text-slate-600">No importa si es de madrugada o fin de semana; el asistente virtual siempre estará disponible para ti.</p>
+                    </div>
+                    <!-- Beneficio 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-pink-50 rounded-xl flex items-center justify-center text-pink-600 mb-6">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Seguro y Privado</h3>
+                        <p class="text-slate-600">Tus conversaciones y consultas están protegidas bajo estrictos estándares de seguridad y confidencialidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instrucciones de uso -->
+        <section id="instrucciones" class="py-16 bg-white border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900">¿Cómo empezar a chatear?</h2>
+                    <p class="text-slate-600 mt-4">Es extremadamente fácil. Sigue estos simples pasos.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                    <!-- Paso 1 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-indigo-50 border-2 border-indigo-200 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl mb-6">
+                            1
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">Escribe tu Pregunta</h3>
+                        <p class="text-sm text-slate-500 max-w-xs">Haz clic directamente sobre la caja del chat e ingresa tu consulta.</p>
+                    </div>
+                    <!-- Paso 2 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-indigo-50 border-2 border-indigo-200 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl mb-6">
+                            2
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">Respuestas en Vivo</h3>
+                        <p class="text-sm text-slate-500 max-w-xs">La inteligencia artificial procesará tu mensaje y responderá al instante.</p>
+                    </div>
+                    <!-- Paso 3 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-indigo-50 border-2 border-indigo-200 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl mb-6">
+                            3
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">¡Problema Resuelto!</h3>
+                        <p class="text-sm text-slate-500 max-w-xs">Puedes interactuar cuantas veces quieras hasta aclarar todas tus inquietudes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <div class="flex items-center space-x-2">
+                    <div class="bg-indigo-600 text-white p-1.5 rounded-md">
+                        <i data-lucide="bot" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-bold text-white text-lg">Asistente Virtual</span>
+                </div>
+                <p class="text-sm text-slate-500">
+                    &copy; 2026 Todos los derechos reservados. Impulsado por Chatbase.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Indicador Visual Interactivo en la Esquina Inferior Derecha (Burbuja de Invitación) -->
+    <div id="bubble-invitation" class="fixed bottom-24 right-6 z-50 max-w-xs bg-white border border-slate-100 rounded-2xl shadow-2xl p-4 animate-float transition-all duration-300 transform scale-100">
+        <div class="flex items-start space-x-3">
+            <div class="bg-indigo-100 text-indigo-600 p-2 rounded-full flex-shrink-0 mt-0.5">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+            </div>
+            <div>
+                <p class="text-xs font-bold text-slate-800">¡Chatea con nosotros!</p>
+                <p class="text-xs text-slate-500 mt-1">Usa la ventana de chat principal en la cabecera para resolver tus dudas de inmediato.</p>
+                <button onclick="cerrarInvitacion()" class="text-[10px] text-slate-400 hover:text-slate-600 mt-2 block font-medium underline">
+                    Cerrar mensaje
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de Interacción Local -->
     <script>
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        
-        function playSound(type) {
-            if (audioCtx.state === 'suspended') audioCtx.resume();
-            const osc = audioCtx.createOscillator();
-            const gainNode = audioCtx.createGain();
-            osc.connect(gainNode);
-            gainNode.connect(audioCtx.destination);
-            
-            if (type === 'success') {
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(440, audioCtx.currentTime);
-                osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.1);
-                gainNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
-                osc.start(); osc.stop(audioCtx.currentTime + 0.5);
-            } else if (type === 'error') {
-                osc.type = 'sawtooth';
-                osc.frequency.setValueAtTime(300, audioCtx.currentTime);
-                osc.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.1);
-                gainNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
-                osc.start(); osc.stop(audioCtx.currentTime + 0.3);
-            } else if (type === 'win') {
-                osc.type = 'square';
-                osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
-                osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.1); // E5
-                osc.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.2); // G5
-                osc.frequency.setValueAtTime(1046.50, audioCtx.currentTime + 0.3); // C6
-                gainNode.gain.setValueAtTime(0.2, audioCtx.currentTime);
-                gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.6);
-                osc.start(); osc.stop(audioCtx.currentTime + 0.6);
-            }
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
+
+        // Cerrar la invitación de chat manualmente
+        function cerrarInvitacion() {
+            const bubble = document.getElementById('bubble-invitation');
+            bubble.style.opacity = '0';
+            setTimeout(() => {
+                bubble.style.display = 'none';
+            }, 300);
         }
-
-        // --- Navegación ---
-        let currentPage = 1;
-        const totalPages = 11;
-
-        function updateNav() {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById(`page-${currentPage}`).classList.add('active');
-            document.getElementById('current-page-indicator').textContent = currentPage;
-            
-            document.getElementById('btn-prev').disabled = (currentPage === 1);
-            
-            const btnNext = document.getElementById('btn-next');
-            if (currentPage === totalPages) {
-                btnNext.disabled = true;
-                btnNext.classList.replace('bg-[#80FF80]', 'bg-gray-200');
-            } else {
-                btnNext.disabled = false;
-                btnNext.classList.replace('bg-gray-200', 'bg-[#80FF80]');
-            }
-        }
-
-        function nextPage() {
-            if (currentPage < totalPages) { currentPage++; updateNav(); }
-        }
-
-        function prevPage() {
-            if (currentPage > 1) { currentPage--; updateNav(); }
-        }
-
-        function goToPage(p) {
-            currentPage = p;
-            updateNav();
-        }
-
-        // --- Actividad 1: Sopa de Letras ---
-        const sopaWords = ["PLANETA", "MAR", "VIDA", "TELA", "REUTILIZAR", "RECICLAR"];
-        // Grid 10x10 pre-diseñado para asegurar funcionalidad en móvil sin librerías complejas.
-        const gridData = [
-            ['P','L','A','N','E','T','A','X','J','O'],
-            ['K','V','I','D','A','Z','M','W','Q','P'],
-            ['T','E','L','A','Y','S','A','B','C','D'],
-            ['R','E','U','T','I','L','I','Z','A','R'],
-            ['R','E','C','I','C','L','A','R','N','M'],
-            ['A','F','G','H','J','K','L','Ñ','Z','X'],
-            ['C','V','B','N','M','Q','W','E','R','T'],
-            ['Y','U','I','O','P','A','S','D','F','G'],
-            ['H','J','K','L','Z','X','C','V','B','N'],
-            ['M','Q','W','E','R','T','Y','U','I','O']
-        ];
-        // Posiciones válidas (fila, col) para las palabras
-        const validCells = new Set([
-            '0,0','0,1','0,2','0,3','0,4','0,5','0,6', // PLANETA
-            '1,1','1,2','1,3','1,4',                   // VIDA
-            '1,6','0,6','2,6',                         // MAR (vertical en columna 6 - Wait, let's keep it simple. Actually M=1,6, A=0,6? No, in my grid: M is 1,6. A is 2,6? Let's just hardcode correct cells based on visual layout)
-        ]);
-        
-        // Let's dynamically tag cells for simplicity
-        const validCoords = [
-            [0,0], [0,1], [0,2], [0,3], [0,4], [0,5], [0,6], // PLANETA
-            [1,1], [1,2], [1,3], [1,4],                      // VIDA
-            [2,0], [2,1], [2,2], [2,3],                      // TELA
-            [3,0], [3,1], [3,2], [3,3], [3,4], [3,5], [3,6], [3,7], [3,8], [3,9], // REUTILIZAR
-            [4,0], [4,1], [4,2], [4,3], [4,4], [4,5], [4,6], [4,7],               // RECICLAR
-            [1,6], [2,6], [3,6] // MAR (Wait, 3,6 is 'I' from Reutilizar. Let's modify grid so MAR is distinct)
-        ];
-        // Re-write grid logic purely:
-        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        function initSopa() {
-            const gridContainer = document.getElementById('sopa-grid');
-            gridContainer.innerHTML = '';
-            
-            // Generate layout map
-            let map = Array(10).fill(0).map(() => Array(10).fill(''));
-            
-            function placeWord(word, row, col, dir) {
-                for(let i=0; i<word.length; i++){
-                    let r = dir==='H' ? row : row+i;
-                    let c = dir==='H' ? col+i : col;
-                    map[r][c] = word[i];
-                }
-            }
-            
-            placeWord("PLANETA", 0, 0, 'H');
-            placeWord("REUTILIZAR", 3, 0, 'H');
-            placeWord("RECICLAR", 5, 1, 'H');
-            placeWord("VIDA", 7, 2, 'H');
-            placeWord("TELA", 9, 5, 'H');
-            placeWord("MAR", 6, 8, 'V'); // 6,8 to 8,8
-
-            for(let r=0; r<10; r++){
-                for(let c=0; c<10; c++){
-                    let isWord = map[r][c] !== '';
-                    let char = isWord ? map[r][c] : letters.charAt(Math.floor(Math.random() * letters.length));
-                    
-                    let cell = document.createElement('div');
-                    cell.className = 'celda-sopa';
-                    cell.textContent = char;
-                    if(isWord) cell.dataset.word = "true";
-                    
-                    cell.onclick = () => {
-                        playSound('success');
-                        cell.classList.toggle('selected');
-                    };
-                    gridContainer.appendChild(cell);
-                }
-            }
-        }
-        initSopa();
-
-        function checkSopa() {
-            const cells = document.querySelectorAll('.celda-sopa');
-            let correctSelected = 0;
-            let totalWordLetters = document.querySelectorAll('.celda-sopa[data-word="true"]').length;
-            let wrongSelected = 0;
-
-            cells.forEach(c => {
-                if (c.classList.contains('selected')) {
-                    if (c.dataset.word === "true") correctSelected++;
-                    else wrongSelected++;
-                }
-            });
-
-            const msg = document.getElementById('sopa-msg');
-            msg.classList.remove('hidden');
-
-            if (correctSelected === totalWordLetters && wrongSelected === 0) {
-                playSound('win');
-                msg.textContent = "¡Felicidades! Encontraste todas las palabras.";
-                msg.className = "mt-3 text-center font-bold text-green-600 block";
-                cells.forEach(c => {
-                    if (c.dataset.word === "true") {
-                        c.classList.remove('selected');
-                        c.classList.add('correct');
-                    }
-                });
-            } else {
-                playSound('error');
-                msg.textContent = `Faltan palabras o seleccionaste letras incorrectas. (Acertadas: ${correctSelected}/${totalWordLetters})`;
-                msg.className = "mt-3 text-center font-bold text-red-500 block";
-            }
-        }
-
-        // --- Actividad 2: Emparejar Genérico ---
-        function initMatchGame(colLeftId, colRightId, msgId) {
-            let selectedLeft = null;
-            let selectedRight = null;
-            let matchedCount = 0;
-            const totalPairs = document.getElementById(colLeftId).children.length;
-
-            const handleSelect = (btn, side) => {
-                playSound('success');
-                if (side === 'left') {
-                    if (selectedLeft) selectedLeft.classList.remove('selected');
-                    selectedLeft = btn;
-                } else {
-                    if (selectedRight) selectedRight.classList.remove('selected');
-                    selectedRight = btn;
-                }
-                btn.classList.add('selected');
-
-                if (selectedLeft && selectedRight) {
-                    if (selectedLeft.dataset.id === selectedRight.dataset.id) {
-                        // Match!
-                        playSound('win');
-                        selectedLeft.classList.replace('selected', 'matched');
-                        selectedRight.classList.replace('selected', 'matched');
-                        selectedLeft = null;
-                        selectedRight = null;
-                        matchedCount++;
-                        if (matchedCount === totalPairs) {
-                            document.getElementById(msgId).classList.remove('hidden');
-                        }
-                    } else {
-                        // Error
-                        playSound('error');
-                        selectedLeft.classList.remove('selected');
-                        selectedLeft.classList.add('error');
-                        selectedRight.classList.remove('selected');
-                        selectedRight.classList.add('error');
-                        
-                        setTimeout(() => {
-                            if(selectedLeft) selectedLeft.classList.remove('error');
-                            if(selectedRight) selectedRight.classList.remove('error');
-                            selectedLeft = null;
-                            selectedRight = null;
-                        }, 500);
-                    }
-                }
-            };
-
-            document.querySelectorAll(`#${colLeftId} button`).forEach(b => {
-                b.onclick = () => handleSelect(b, 'left');
-            });
-            document.querySelectorAll(`#${colRightId} button`).forEach(b => {
-                b.onclick = () => handleSelect(b, 'right');
-            });
-        }
-        // Initialize the two match games
-        initMatchGame('col-old', 'col-new', 'match-msg');
-        initMatchGame('col-final-left', 'col-final-right', 'final-match-msg');
-
-        // --- Actividad 3: Clasificar (Click to Move) ---
-        let selectedResiduo = null;
-        let clasificadosCorrectos = 0;
-        const totalResiduos = 6;
-
-        function selectResiduo(el) {
-            if(el.classList.contains('invisible')) return; // already sorted
-            if(selectedResiduo) selectedResiduo.classList.replace('border-blue-500', 'border-transparent');
-            selectedResiduo = el;
-            playSound('success');
-            selectedResiduo.classList.replace('border-transparent', 'border-blue-500');
-        }
-
-        function dropResiduo(tipoContenedor) {
-            if (!selectedResiduo) return;
-
-            const msg = document.getElementById('classify-msg');
-            const targetBin = document.getElementById(`bin-${tipoContenedor}`);
-
-            if (selectedResiduo.dataset.tipo === tipoContenedor) {
-                // Correcto
-                playSound('win');
-                msg.textContent = "¡Correcto!";
-                msg.className = "text-center mt-6 text-xl font-bold h-8 text-green-600";
-                
-                // Mover texto al contenedor (simplificado visualmente)
-                const span = document.createElement('div');
-                span.textContent = selectedResiduo.textContent.split(' ')[1] || selectedResiduo.textContent;
-                span.className = "text-[10px] bg-white/50 rounded px-1";
-                targetBin.appendChild(span);
-                
-                selectedResiduo.classList.add('invisible'); // hide original
-                selectedResiduo.classList.remove('border-blue-500');
-                selectedResiduo = null;
-                clasificadosCorrectos++;
-
-                if (clasificadosCorrectos === totalResiduos) {
-                    msg.textContent = "¡Todo limpio y clasificado!";
-                }
-            } else {
-                // Incorrecto
-                playSound('error');
-                msg.textContent = "Ups, ese no es su contenedor.";
-                msg.className = "text-center mt-6 text-xl font-bold h-8 text-red-500";
-                selectedResiduo.classList.replace('border-blue-500', 'border-transparent');
-                selectedResiduo.classList.add('error');
-                setTimeout(() => selectedResiduo.classList.remove('error'), 400);
-                selectedResiduo = null;
-            }
-        }
-
-        // --- Actividad 4: Ordenar Ciclo ---
-        const cycleItems = [
-            { id: 1, text: "🛒 1. Comprar y consumir producto" },
-            { id: 2, text: "🗑️ 2. Separar envase vacío" },
-            { id: 3, text: "♻️ 3. Depositar en contenedor verde" },
-            { id: 4, text: "🏭 4. Planta de reciclaje" }
-        ];
-        let currentOrder = [3, 1, 4, 2]; // desordenado inicial
-
-        function renderSortList() {
-            const list = document.getElementById('sort-list');
-            list.innerHTML = '';
-            currentOrder.forEach((id, index) => {
-                const itemDef = cycleItems.find(i => i.id === id);
-                
-                const div = document.createElement('div');
-                div.className = "flex justify-between items-center bg-gray-50 p-3 mb-2 rounded border border-gray-200";
-                
-                const text = document.createElement('span');
-                text.className = "font-bold text-lg";
-                text.textContent = itemDef.text.substring(4); // Remove emoji/number for clean display if desired, but keep it for clarity
-                text.textContent = itemDef.text;
-
-                const btns = document.createElement('div');
-                btns.className = "flex flex-col gap-1";
-                
-                const btnUp = document.createElement('button');
-                btnUp.innerHTML = "▲";
-                btnUp.className = "bg-gray-200 px-2 py-0.5 rounded hover:bg-gray-300 " + (index === 0 ? "opacity-30 cursor-not-allowed" : "");
-                btnUp.onclick = () => moveItem(index, -1);
-
-                const btnDown = document.createElement('button');
-                btnDown.innerHTML = "▼";
-                btnDown.className = "bg-gray-200 px-2 py-0.5 rounded hover:bg-gray-300 " + (index === currentOrder.length-1 ? "opacity-30 cursor-not-allowed" : "");
-                btnDown.onclick = () => moveItem(index, 1);
-
-                btns.appendChild(btnUp);
-                btns.appendChild(btnDown);
-                
-                div.appendChild(text);
-                div.appendChild(btns);
-                list.appendChild(div);
-            });
-        }
-        
-        function moveItem(index, direction) {
-            if (index + direction < 0 || index + direction >= currentOrder.length) return;
-            playSound('success');
-            const temp = currentOrder[index];
-            currentOrder[index] = currentOrder[index + direction];
-            currentOrder[index + direction] = temp;
-            renderSortList();
-        }
-        renderSortList();
-
-        function checkOrder() {
-            const correctOrder = [1, 2, 3, 4];
-            let isCorrect = true;
-            for(let i=0; i<4; i++) {
-                if(currentOrder[i] !== correctOrder[i]) isCorrect = false;
-            }
-
-            const msg = document.getElementById('order-msg');
-            msg.classList.remove('hidden');
-            
-            if (isCorrect) {
-                playSound('win');
-                msg.textContent = "¡Perfecto! Has ordenado el ciclo del reciclaje.";
-                msg.className = "mt-4 text-xl font-bold text-green-600 block";
-            } else {
-                playSound('error');
-                msg.textContent = "Aún no. Revisa los pasos e intenta de nuevo.";
-                msg.className = "mt-4 text-xl font-bold text-red-500 block";
-            }
-        }
-
-        // --- Actividad 5: Trivia ---
-        function checkTrivia() {
-            let aciertos = 0;
-            const q1 = document.querySelector('input[name="q1"]:checked');
-            const q2 = document.querySelector('input[name="q2"]:checked');
-            const q3 = document.querySelector('input[name="q3"]:checked');
-
-            if (!q1 || !q2 || !q3) {
-                alert("Por favor responde todas las preguntas.");
-                return;
-            }
-
-            if (q1.value === "1") aciertos++; // Azul
-            if (q2.value === "1") aciertos++; // Reducir
-            if (q3.value === "1") aciertos++; // Reutilizando
-
-            const msg = document.getElementById('trivia-msg');
-            msg.classList.remove('hidden');
-
-            if (aciertos === 3) {
-                playSound('win');
-                msg.textContent = "¡Excelente! 3/3 aciertos. Eres un experto.";
-                msg.className = "mt-4 font-bold text-xl block text-green-600";
-            } else {
-                playSound('error');
-                msg.textContent = `Obtuviste ${aciertos} de 3. Revisa lo aprendido en las páginas anteriores.`;
-                msg.className = "mt-4 font-bold text-xl block text-red-500";
-            }
-        }
-
-        // --- Actividad 6: Diploma ---
-        function generarDiploma() {
-            const nombre = document.getElementById('nombre-guardian').value.trim();
-            if (!nombre) {
-                playSound('error');
-                alert("Por favor, escribe tu nombre primero.");
-                return;
-            }
-            
-            playSound('win');
-            document.getElementById('diploma-form').classList.add('hidden');
-            document.getElementById('diploma-cert').classList.remove('hidden');
-            document.getElementById('cert-name').textContent = nombre;
-            
-            // Disparar confeti (efecto CSS simple o alert)
-            setTimeout(() => alert(`¡Felicidades ${nombre}! Has completado todas las misiones.`), 500);
-        }
-
-        // --- Función para Descargar el Juego ---
-        function descargarJuego() {
-            // Guardar la página actual y regresar a la 1 temporalmente 
-            // para que el archivo descargado empiece siempre desde el inicio
-            const oldPage = currentPage;
-            goToPage(1);
-
-            // Extraer el código HTML actual
-            let htmlContent = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-            
-            // Crear el archivo virtual (Blob)
-            const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
-            const url = URL.createObjectURL(blob);
-            
-            // Crear un enlace invisible y forzar la descarga
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'Guardianes_del_Planeta.html'; // Nombre del archivo
-            document.body.appendChild(a);
-            a.click();
-            
-            // Limpiar la memoria
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-
-            // Devolver al usuario a la página donde estaba
-            goToPage(oldPage);
-        }
-
-        // Init
-        updateNav();
     </script>
 
-</body></html>
+    <!-- TU SCRIPT ORIGINAL DE CHATBASE INTEGRADO CORRECTAMENTE (Por si quieres también el globo flotante global) -->
+    <script>
+    (function(){
+        if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+            window.chatbase=(...arguments)=>{
+                if(!window.chatbase.q){window.chatbase.q=[]}
+                window.chatbase.q.push(arguments)
+            };
+            window.chatbase=new Proxy(window.chatbase,{
+                get(target,prop){
+                    if(prop==="q"){return target.q}
+                    return(...args)=>target(prop,...args)
+                }
+            })
+        }
+        const onLoad=function(){
+            const script=document.createElement("script");
+            script.src="https://www.chatbase.co/embed.min.js";
+            script.id="oD55uJwRkG4F9S5HkMkEF";
+            script.domain="www.chatbase.co";
+            document.body.appendChild(script)
+        };
+        if(document.readyState==="complete"){
+            onLoad()
+        }else{
+            window.addEventListener("load",onLoad)
+        }
+    })();
+    </script>
+
+</body>
+</html>
